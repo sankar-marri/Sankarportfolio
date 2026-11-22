@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sankar | AI Fellow & Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Sankar - Aarohan AI Fellow 2026, Full-Stack Web Developer, Creator of AIXplore Telugu & Mana Paderu Trails." />
+  <meta name="keywords" content="Sankar, Aarohan AI Fellowship, YTC Pedabayalu, ITDA Paderu, Web Developer, AIXplore Telugu" />
+  <meta name="author" content="Sankar" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scroll-progress-line" class="scroll-progress-line"></div>
+
+  <!-- Interactive Background Constellation Canvas -->
+  <canvas id="ambient-constellation-canvas" class="ambient-constellation-canvas"></canvas>
+
+  <!-- Interactive Cyber Cursor -->
+  <div id="cyber-cursor-dot" class="cyber-cursor-dot"></div>
+  <div id="cyber-cursor-ring" class="cyber-cursor-ring"></div>
+
+  <!-- Live Dynamic System HUD -->
+  <div class="dynamic-system-hud" id="dynamic-system-hud" title="Click to Toggle Dynamic Sound FX">
+    <span class="hud-live-dot"></span>
+    <span class="hud-text">DYNAMIC LIVE 60FPS</span>
+    <span class="hud-divider">•</span>
+    <span class="hud-target" id="hud-section-tracker">HOME</span>
+  </div>
+
+
+  <!-- Background Animated Glow Elements -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-accent">&lt;</span>Sankar<span class="logo-accent">/&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="nav-menu">
+        <a href="#home" class="nav-item active">Home</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#fellowship" class="nav-item">Fellowship</a>
+        <a href="#skills" class="nav-item">Skills</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#channels" class="nav-item">Channels</a>
+        <a href="#team" class="nav-item">Team</a>
+        <a href="#contact" class="nav-item">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="icon-btn" title="Toggle Light/Dark Theme" aria-label="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Connect Button -->
+        <a href="#contact" class="btn btn-sm btn-primary">Let's Talk</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <!-- Background Video Intro Canvas & Vignette Overlay -->
+      <div class="hero-video-bg-container">
+        <canvas id="hero-bg-video-canvas" width="1920" height="1080" class="hero-bg-video-canvas"></canvas>
+        <div class="hero-video-vignette"></div>
+        <div class="hero-video-grid-overlay"></div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge-wrapper">
+            <span class="status-dot"></span>
+            <span class="badge-text">Aarohan AI Fellow 2026 • ITDA Pedabayalu</span>
+            <span class="badge-separator">•</span>
+            <span class="badge-text">Full-Stack Developer & Innovator</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">Sankar</span>
+          </h1>
+
+          <div class="typing-container">
+            <span class="typing-prefix">I am a </span>
+            <span class="typing-text" id="typing-text"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <p class="hero-desc">
+            Passionate technologist driving impact through Artificial Intelligence, modern full-stack web applications, and community tech advocacy in Alluri Sitharama Raju (ASR) District.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore My Work</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#about" class="btn btn-outline">About Me</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+
+          <!-- Social Quick Links -->
+          <div class="hero-socials">
+            <span class="social-label">Connect:</span>
+            <a href="https://github.com/sankar-marri" target="_blank" rel="noopener noreferrer" class="social-link github" title="GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/sankar-marri-927698444" target="_blank" rel="noopener noreferrer" class="social-link linkedin" title="LinkedIn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.77v8.37H6.46V10.9M7.84 6.7a1.61 1.61 0 1 0 1.61 1.61A1.61 1.61 0 0 0 7.84 6.7z"/>
+              </svg>
+            </a>
+            <a href="https://youtube.com/@aixploreteluguofficial?si=aV_yyI-WDrSwnXCt" target="_blank" rel="noopener noreferrer" class="social-link youtube" title="AIXplore Telugu YouTube">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/manapaderutrails?cnvx=MXM1OG45ZW9hNHp1bw==" target="_blank" rel="noopener noreferrer" class="social-link instagram" title="Mana Paderu Trails Instagram">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+              </svg>
+            </a>
+            <a href="mailto:marrisankar24@gmail.com" class="social-link email" title="Send Email">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="profile-card">
+            <div class="profile-avatar">
+              <img src="images/sankar-github.jpg?v=3" alt="Sankar" class="avatar-photo" />
+            </div>
+
+            <div class="profile-card-details">
+              <h3>Sankar</h3>
+              <p class="role-text">AI Fellow & Full-Stack Developer</p>
+              <div class="info-chips">
+                <span class="chip">📍 Pedabayalu, ASR Dist.</span>
+                <span class="chip">🎓 Roll: AIF26073</span>
+                <span class="chip">🌐 YTC Pedabayalu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Counter Bar -->
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-number" data-target="6">0</div>
+            <div class="metric-plus">+</div>
+            <div class="metric-title">Live Deployed Sites</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" data-target="2">0</div>
+            <div class="metric-plus">Channels</div>
+            <div class="metric-title">YouTube Content Platforms</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" data-target="9">0</div>
+            <div class="metric-plus">Team</div>
+            <div class="metric-title">Leaders & Cohort Members</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" data-target="2026">0</div>
+            <div class="metric-plus">Batch</div>
+            <div class="metric-title">Aarohan AI Fellowship</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Who I Am</span>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Featured Professional Portrait -->
+          <div class="about-image-card">
+            <div class="photo-frame">
+              <img src="images/sankar-professional.jpg" alt="Sankar" class="about-featured-img" loading="eager" onerror="this.onerror=null; this.src='images/sankar-github.jpg';" />
+              <div class="photo-badge">
+                <span class="photo-badge-icon">📍</span>
+                <div class="photo-badge-text">
+                  <strong>Pedabayalu, ASR District</strong>
+                  <span>YTC ITDA Paderu</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text">
+            <h3>Dedicated to Technology, Community & Applied AI</h3>
+            <p>
+              I am <strong>Sankar</strong>, an aspiring technologist and developer from <strong>Pedabayalu, Alluri Sitharama Raju (ASR) District, Andhra Pradesh</strong>. I am currently selected for the prestigious <strong>Aarohan AI Fellowship 2026</strong> at YTC Pedabayalu.
+            </p>
+            <p>
+              My mission is to leverage software development and Artificial Intelligence to solve regional challenges, build community awareness through digital tourism, and deliver AI-assisted applications in healthcare and environmental preservation.
+            </p>
+            <p>
+              Beyond coding, I am a digital educator and creator. I run <strong>AIXplore Telugu</strong> to demystify emerging technologies for regional learners, and <strong>Mana Paderu Trails</strong> to celebrate the rich cultural, natural, and trekking heritage of our agency region.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <div class="highlight-icon">🎯</div>
+                <div>
+                  <h4>Problem Solver</h4>
+                  <p>Building real-world web applications deployed live on Netlify.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon">🤝</div>
+                <div>
+                  <h4>Team Leader & Collaborator</h4>
+                  <p>Guiding a group of 6 passionate student innovators from YTC.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon">📢</div>
+                <div>
+                  <h4>Bilingual Tech Educator</h4>
+                  <p>Translating cutting-edge AI breakthroughs into Telugu for students.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-meta-card">
+            <h4 class="card-title">Professional Snapshot</h4>
+            <div class="meta-list">
+              <div class="meta-row">
+                <span class="meta-label">Full Name:</span>
+                <span class="meta-value">Sankar</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Fellowship:</span>
+                <span class="meta-value">Aarohan AI Fellowship 2026</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Roll Number:</span>
+                <span class="meta-value badge-roll">AIF26073 (Section A)</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Center / Branch:</span>
+                <span class="meta-value">YTC Pedabayalu, ITDA Paderu</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Graduation Year:</span>
+                <span class="meta-value">2026</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Primary Email:</span>
+                <span class="meta-value"><a href="mailto:marrisankar24@gmail.com">marrisankar24@gmail.com</a></span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Institutional Email:</span>
+                <span class="meta-value"><a href="mailto:itdasankarytc@gmail.com">itdasankarytc@gmail.com</a></span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Phone:</span>
+                <span class="meta-value"><a href="tel:+919390656724">+91 9390656724</a></span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Location:</span>
+                <span class="meta-value">Pedabayalu / Paderu, ASR District, A.P.</span>
+              </div>
+            </div>
+
+            <div class="quick-download-cta">
+              <a href="mailto:marrisankar24@gmail.com?subject=Inquiry%20regarding%20Portfolio%20and%20Resume" class="btn btn-sm btn-primary w-100">
+                <span>Request Resume / CV</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+        <!-- Fellowship & Academic Journey Section -->
+    <section class="section fellowship-section" id="fellowship">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Learning & Credentials</span>
+          <h2 class="section-title">Academic & Fellowship Track</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Timeline Item 1: Aarohan AI Fellowship -->
+          <a href="https://learn.fynityinnovations.com/student/dashboard" target="_blank" rel="noopener noreferrer" class="timeline-card" title="Open Aarohan Fellowship Student Dashboard">
+            <div class="timeline-badge">Flagship</div>
+            <div class="credential-logo-box">
+              <img src="images/logo-aarohan.jpg" alt="Aarohan AI Fellowship Program Logo" class="credential-logo-img" />
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-tag">Flagship Fellowship</div>
+              <h3>AAROHAN AI FELLOWSHIP 2026</h3>
+              <h4>YTC Pedabayalu • Roll No: AIF26073</h4>
+              <p>
+                Intensive program equipping high-potential student innovators with practical AI workflows, modern programming concepts, machine learning foundations, and real-world project deployment skills.
+              </p>
+              <div class="tag-row">
+                <span class="skill-tag">Artificial Intelligence</span>
+                <span class="skill-tag">Applied ML</span>
+                <span class="skill-tag">YTC Pedabayalu</span>
+                <span class="skill-tag">Batch 2026</span>
+              </div>
+            </div>
+            <div class="timeline-card-footer">
+              <span class="timeline-link-badge">Official Portal</span>
+              <span class="timeline-link-action">
+                <span>Open Fellowship Portal</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Timeline Item 2: Wadhwani Foundation -->
+          <a href="https://skilling.wadhwanifoundation.org/en/home" target="_blank" rel="noopener noreferrer" class="timeline-card" title="Open Wadhwani Foundation Skilling Portal">
+            <div class="timeline-badge">Partner</div>
+            <div class="credential-logo-box">
+              <img src="images/logo-wadhwani.jpg" alt="Wadhwani Foundation Logo" class="credential-logo-img" />
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-tag">Skill Development</div>
+              <h3>Wadhwani Foundation</h3>
+              <h4>Employability & Digital Competencies</h4>
+              <p>
+                Comprehensive modules covering 21st-century workplace readiness, professional communication, structured problem-solving, and technology-driven collaborative competencies.
+              </p>
+              <div class="tag-row">
+                <span class="skill-tag">Workplace Readiness</span>
+                <span class="skill-tag">Critical Thinking</span>
+                <span class="skill-tag">Collaboration</span>
+              </div>
+            </div>
+            <div class="timeline-card-footer">
+              <span class="timeline-link-badge">Skilling Platform</span>
+              <span class="timeline-link-action">
+                <span>Visit Skilling Portal</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Timeline Item 3: Fynity Learn -->
+          <a href="https://learn.fynityinnovations.com/student/dashboard" target="_blank" rel="noopener noreferrer" class="timeline-card" title="Open Fynity Student Learning Dashboard">
+            <div class="timeline-badge">Partner</div>
+            <div class="credential-logo-box">
+              <img src="images/logo-fynity.jpg" alt="Fynity Logo" class="credential-logo-img" />
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-tag">Interactive Learning</div>
+              <h3>Fynity Learn</h3>
+              <h4>AI & Technical Skills Training</h4>
+              <p>
+                Structured learning dashboards delivering technical curricula, assessments, milestone progress tracking, and placement-focused engineering capabilities.
+              </p>
+              <div class="tag-row">
+                <span class="skill-tag">Fynity Innovations</span>
+                <span class="skill-tag">AI Curriculum</span>
+                <span class="skill-tag">Skill Milestones</span>
+              </div>
+            </div>
+            <div class="timeline-card-footer">
+              <span class="timeline-link-badge">Learning Hub</span>
+              <span class="timeline-link-action">
+                <span>Open Student Dashboard</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Timeline Item 4: CareerEzi -->
+          <a href="https://www.careerezi.com/u/sankar" target="_blank" rel="noopener noreferrer" class="timeline-card" title="Open Sankar's CareerEzi Profile">
+            <div class="timeline-badge">Partner</div>
+            <div class="credential-logo-box dark-bg">
+              <img src="images/logo-careerezi.jpg" alt="CareerEzi Logo" class="credential-logo-img" />
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-tag">Placement Readiness</div>
+              <h3>CareerEzi</h3>
+              <h4>Evaluation & Placement Portal</h4>
+              <p>
+                Dedicated evaluation and placement-readiness platform assessing real-time aptitude, programming competencies, and technical interview preparedness.
+              </p>
+              <div class="tag-row">
+                <span class="skill-tag">Placement Track</span>
+                <span class="skill-tag">AIF26073</span>
+                <span class="skill-tag">Industry Prep</span>
+              </div>
+            </div>
+            <div class="timeline-card-footer">
+              <span class="timeline-link-badge">Candidate Profile</span>
+              <span class="timeline-link-action">
+                <span>View Sankar's Profile</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    
+
+        <!-- Skills Section -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Capabilities</span>
+          <h2 class="section-title">Technical & Professional Skills</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Category 1: Web Development -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-title-wrap">
+                <div class="category-icon">💻</div>
+                <h3>Web Development</h3>
+              </div>
+              <span class="category-telemetry">Velocity • 87%</span>
+            </div>
+            <div class="speedometer-grid">
+              <!-- Skill 1 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <defs>
+                      <linearGradient id="speedo-web" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#38bdf8" />
+                        <stop offset="100%" stop-color="#818cf8" />
+                      </linearGradient>
+                    </defs>
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-web)" style="stroke-dasharray: 163.36; stroke-dashoffset: 16.34;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(72deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">90%</text>
+                    <text x="80" y="87" class="speedo-badge">EXPERT</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">HTML5 / Semantic Markup</div>
+              </div>
+
+              <!-- Skill 2 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-web)" style="stroke-dasharray: 163.36; stroke-dashoffset: 24.50;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(63deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">85%</text>
+                    <text x="80" y="87" class="speedo-badge">ADVANCED</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">CSS3 / Flexbox & CSS Grid</div>
+              </div>
+
+              <!-- Skill 3 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-web)" style="stroke-dasharray: 163.36; stroke-dashoffset: 32.67;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(54deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">80%</text>
+                    <text x="80" y="87" class="speedo-badge">PROFICIENT</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">JavaScript (ES6+)</div>
+              </div>
+
+              <!-- Skill 4 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-web)" style="stroke-dasharray: 163.36; stroke-dashoffset: 13.07;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(75.6deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">92%</text>
+                    <text x="80" y="87" class="speedo-badge">EXPERT</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">Responsive & Mobile UI</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: AI & Emerging Tech -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-title-wrap">
+                <div class="category-icon">🤖</div>
+                <h3>AI & Emerging Tech</h3>
+              </div>
+              <span class="category-telemetry">Velocity • 86%</span>
+            </div>
+            <div class="speedometer-grid">
+              <!-- Skill 1 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <defs>
+                      <linearGradient id="speedo-ai" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#06b6d4" />
+                        <stop offset="100%" stop-color="#c084fc" />
+                      </linearGradient>
+                    </defs>
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-ai)" style="stroke-dasharray: 163.36; stroke-dashoffset: 19.60;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(68.4deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">88%</text>
+                    <text x="80" y="87" class="speedo-badge">ADVANCED</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">Aarohan AI Fellowship</div>
+              </div>
+
+              <!-- Skill 2 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-ai)" style="stroke-dasharray: 163.36; stroke-dashoffset: 16.34;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(72deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">90%</text>
+                    <text x="80" y="87" class="speedo-badge">EXPERT</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">Prompt Eng. & AI Tools</div>
+              </div>
+
+              <!-- Skill 3 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-ai)" style="stroke-dasharray: 163.36; stroke-dashoffset: 29.40;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(57.6deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">82%</text>
+                    <text x="80" y="87" class="speedo-badge">PROFICIENT</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">AI in Health & Clinic Systems</div>
+              </div>
+
+              <!-- Skill 4 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-ai)" style="stroke-dasharray: 163.36; stroke-dashoffset: 24.50;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(63deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">85%</text>
+                    <text x="80" y="87" class="speedo-badge">ADVANCED</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">AI Content & Media Workflows</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Deployment & Developer Tools -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-title-wrap">
+                <div class="category-icon">⚙️</div>
+                <h3>Deployment & Dev Tools</h3>
+              </div>
+              <span class="category-telemetry">Velocity • 86%</span>
+            </div>
+            <div class="speedometer-grid">
+              <!-- Skill 1 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <defs>
+                      <linearGradient id="speedo-tools" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#10b981" />
+                        <stop offset="100%" stop-color="#38bdf8" />
+                      </linearGradient>
+                    </defs>
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-tools)" style="stroke-dasharray: 163.36; stroke-dashoffset: 13.07;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(75.6deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">92%</text>
+                    <text x="80" y="87" class="speedo-badge">EXPERT</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">Netlify Cloud & CI/CD</div>
+              </div>
+
+              <!-- Skill 2 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-tools)" style="stroke-dasharray: 163.36; stroke-dashoffset: 29.40;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(57.6deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">82%</text>
+                    <text x="80" y="87" class="speedo-badge">PROFICIENT</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">Git & GitHub Version Control</div>
+              </div>
+
+              <!-- Skill 3 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-tools)" style="stroke-dasharray: 163.36; stroke-dashoffset: 19.60;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(68.4deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">88%</text>
+                    <text x="80" y="87" class="speedo-badge">ADVANCED</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">VS Code & Dev Environments</div>
+              </div>
+
+              <!-- Skill 4 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-tools)" style="stroke-dasharray: 163.36; stroke-dashoffset: 32.67;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(54deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">80%</text>
+                    <text x="80" y="87" class="speedo-badge">PROFICIENT</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">REST APIs & Integrations</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Leadership & Media Production -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-title-wrap">
+                <div class="category-icon">🎙️</div>
+                <h3>Leadership & Media</h3>
+              </div>
+              <span class="category-telemetry">Velocity • 90%</span>
+            </div>
+            <div class="speedometer-grid">
+              <!-- Skill 1 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <defs>
+                      <linearGradient id="speedo-lead" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#f59e0b" />
+                        <stop offset="100%" stop-color="#ef4444" />
+                      </linearGradient>
+                    </defs>
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-lead)" style="stroke-dasharray: 163.36; stroke-dashoffset: 13.07;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(75.6deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">92%</text>
+                    <text x="80" y="87" class="speedo-badge">EXPERT</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">Team Guidance & Synergy</div>
+              </div>
+
+              <!-- Skill 2 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-lead)" style="stroke-dasharray: 163.36; stroke-dashoffset: 19.60;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(68.4deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">88%</text>
+                    <text x="80" y="87" class="speedo-badge">ADVANCED</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">YouTube Scripting & Video</div>
+              </div>
+
+              <!-- Skill 3 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-lead)" style="stroke-dasharray: 163.36; stroke-dashoffset: 8.17;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(81deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">95%</text>
+                    <text x="80" y="87" class="speedo-badge">MASTER</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">Regional Tourism Media</div>
+              </div>
+
+              <!-- Skill 4 -->
+              <div class="speedo-item">
+                <div class="speedo-gauge-wrap">
+                  <svg viewBox="0 0 160 100" class="speedo-svg">
+                    <line x1="22" y1="78" x2="27" y2="78" class="speedo-tick" />
+                    <line x1="39" y1="37" x2="43" y2="41" class="speedo-tick" />
+                    <line x1="80" y1="20" x2="80" y2="26" class="speedo-tick" />
+                    <line x1="121" y1="37" x2="117" y2="41" class="speedo-tick" />
+                    <line x1="133" y1="78" x2="138" y2="78" class="speedo-tick" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-track" />
+                    <path d="M 28 78 A 52 52 0 0 1 132 78" class="speedo-progress" stroke="url(#speedo-lead)" style="stroke-dasharray: 163.36; stroke-dashoffset: 22.87;" />
+                    <line x1="80" y1="78" x2="80" y2="38" class="speedo-needle" style="transform: rotate(64.8deg);" />
+                    <circle cx="80" cy="78" r="5.5" class="speedo-hub" />
+                    <circle cx="80" cy="78" r="2.5" class="speedo-hub-pin" />
+                    <text x="80" y="67" class="speedo-val">86%</text>
+                    <text x="80" y="87" class="speedo-badge">ADVANCED</text>
+                  </svg>
+                </div>
+                <div class="speedo-name">Technical Presentation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+        <!-- Projects Section -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portfolio Showcase</span>
+          <h2 class="section-title">Live Deployed Projects</h2>
+          <p class="section-subtitle">Real-world applications built, tested, and deployed live on Netlify.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-controls">
+          <button class="filter-btn active" data-filter="all">All Projects (6)</button>
+          <button class="filter-btn" data-filter="ai-health">AI & Healthcare</button>
+          <button class="filter-btn" data-filter="tourism">Tourism & Regional</button>
+          <button class="filter-btn" data-filter="web-apps">Web Apps & Platforms</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+
+          <!-- Project 1: Arogya Drishti -->
+          <a href="https://arogya-drishti-ai-assisted-health-car.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-card" data-category="ai-health" title="Launch Arogya Drishti Live App">
+            <div class="project-header-bar">
+              <span class="project-category-badge badge-ai">AI & Healthcare</span>
+              <span class="project-status">Live</span>
+            </div>
+            <div class="project-img-box">
+              <img src="images/projects/arogya-drishti.png" alt="Arogya Drishti Preview" class="project-thumb" />
+              <div class="project-img-overlay">
+                <span class="overlay-chip">AI Diagnostics</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Arogya Drishti</h3>
+              <p class="project-subtitle">AI-Assisted Healthcare Diagnostics</p>
+              <p class="project-desc">
+                An intelligent web application exploring AI-assisted medical assessment, health triage, and guidance designed to support rural and semi-urban community clinics.
+              </p>
+              <div class="project-tech">
+                <span>AI Diagnostics</span>
+                <span>JavaScript</span>
+                <span>Responsive UI</span>
+                <span>Netlify</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="btn btn-sm btn-primary">
+                <span>Launch Live App</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Project 2: Mana Paderu Trails Official -->
+          <a href="https://manapadtrails.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-card" data-category="tourism" title="Launch Mana Paderu Trails Live App">
+            <div class="project-header-bar">
+              <span class="project-category-badge badge-tourism">Tourism & Culture</span>
+              <span class="project-status">Live</span>
+            </div>
+            <div class="project-img-box">
+              <img src="images/projects/manapadtrails.png" alt="Mana Paderu Trails Preview" class="project-thumb" />
+              <div class="project-img-overlay">
+                <span class="overlay-chip">Eco-Tourism</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Mana Paderu Trails</h3>
+              <p class="project-subtitle">Agency Eco-Tourism & Trekking Guide</p>
+              <p class="project-desc">
+                The official portal for exploring hidden waterfalls, trekking paths, coffee estates, and eco-friendly destinations in Paderu and surrounding agency valleys.
+              </p>
+              <div class="project-tech">
+                <span>Eco-Tourism</span>
+                <span>Interactive Maps</span>
+                <span>Visual Media</span>
+                <span>Netlify</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="btn btn-sm btn-primary">
+                <span>Launch Live App</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Project 3: Alluri Wonders & Weather -->
+          <a href="https://alluri-wonders143225.netlify.app/#weather" target="_blank" rel="noopener noreferrer" class="project-card" data-category="tourism" title="Launch Alluri Wonders Live App">
+            <div class="project-header-bar">
+              <span class="project-category-badge badge-tourism">Tourism & Weather</span>
+              <span class="project-status">Live</span>
+            </div>
+            <div class="project-img-box">
+              <img src="images/projects/alluri-wonders.png" alt="Alluri Wonders Preview" class="project-thumb" />
+              <div class="project-img-overlay">
+                <span class="overlay-chip">Weather & Sights</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Alluri Wonders</h3>
+              <p class="project-subtitle">Regional Wonders with Weather Updates</p>
+              <p class="project-desc">
+                An interactive web app highlighting top sights across Alluri Sitharama Raju District alongside dynamic weather forecasts to assist tourists and locals alike.
+              </p>
+              <div class="project-tech">
+                <span>Weather API</span>
+                <span>Tourist Sights</span>
+                <span>JavaScript</span>
+                <span>Netlify</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="btn btn-sm btn-primary">
+                <span>Launch Live App</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Project 4: ASR Tourist Guide -->
+          <a href="https://asr-turist.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-card" data-category="tourism" title="Launch ASR Tourist Hub Live App">
+            <div class="project-header-bar">
+              <span class="project-category-badge badge-tourism">Tourism Portal</span>
+              <span class="project-status">Live</span>
+            </div>
+            <div class="project-img-box">
+              <img src="images/projects/asr-turist.png" alt="ASR Tourist Hub Preview" class="project-thumb" />
+              <div class="project-img-overlay">
+                <span class="overlay-chip">Traveler Guide</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">ASR Tourist Hub</h3>
+              <p class="project-subtitle">Alluri District Traveler Companion</p>
+              <p class="project-desc">
+                A clean travel directory showcasing culture, heritage, viewpoints, road routes, and tribal artistry for visitors exploring the Eastern Ghats.
+              </p>
+              <div class="project-tech">
+                <span>Travel Guide</span>
+                <span>Flexbox Grid</span>
+                <span>Mobile UI</span>
+                <span>Netlify</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="btn btn-sm btn-primary">
+                <span>Launch Live App</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Project 5: Nature Glass -->
+          <a href="https://nature-glass.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-card" data-category="web-apps" title="Launch Nature Glass Live App">
+            <div class="project-header-bar">
+              <span class="project-category-badge badge-web">UI / Concept</span>
+              <span class="project-status">Live</span>
+            </div>
+            <div class="project-img-box">
+              <img src="images/projects/nature-glass.png" alt="Nature Glass Preview" class="project-thumb" />
+              <div class="project-img-overlay">
+                <span class="overlay-chip">Glassmorphism UI</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Nature Glass</h3>
+              <p class="project-subtitle">Eco-Aesthetic Glassmorphism UI</p>
+              <p class="project-desc">
+                A design exploration blending environmental visuals with sleek glassmorphism UI principles, demonstrating translucent blur effects and modern design trends.
+              </p>
+              <div class="project-tech">
+                <span>Glassmorphism</span>
+                <span>CSS Backdrop</span>
+                <span>Interactive</span>
+                <span>Netlify</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="btn btn-sm btn-primary">
+                <span>Launch Live App</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Project 6: Thunderous Sprite -->
+          <a href="https://thunderous-sprite-7a49ec.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-card" data-category="web-apps" title="Launch Thunderous Sprite Live App">
+            <div class="project-header-bar">
+              <span class="project-category-badge badge-web">Web Experience</span>
+              <span class="project-status">Live</span>
+            </div>
+            <div class="project-img-box">
+              <img src="images/projects/thunderous-sprite.png" alt="Thunderous Sprite Preview" class="project-thumb" />
+              <div class="project-img-overlay">
+                <span class="overlay-chip">Web Experience</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Thunderous Sprite</h3>
+              <p class="project-subtitle">Dynamic Web Application</p>
+              <p class="project-desc">
+                An energetic, high-performance web experience featuring animated layout structures, fast render times, and responsive state handling.
+              </p>
+              <div class="project-tech">
+                <span>JavaScript</span>
+                <span>Animations</span>
+                <span>Responsive</span>
+                <span>Netlify</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="btn btn-sm btn-primary">
+                <span>Launch Live App</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    
+
+        <!-- Content Creation & Media Channels Section -->
+    <section class="section channels-section" id="channels">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Digital Outreach</span>
+          <h2 class="section-title">Media & YouTube Channels</h2>
+          <p class="section-subtitle">Bridging knowledge gaps through bilingual education and visual storytelling.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="channels-grid">
+          <!-- Channel 1: AIXplore Telugu -->
+          <div class="channel-card" data-card-link="https://youtube.com/@aixploreteluguofficial?si=aV_yyI-WDrSwnXCt" title="Open AIXplore Telugu YouTube Channel">
+            <div class="channel-banner banner-ai">
+              <div class="channel-avatar-wrap">
+                <img src="images/youtube/aixplore-telugu-logo.jpg" alt="AIXplore Telugu Channel Logo" class="channel-avatar-img" />
+              </div>
+              <div class="channel-badge-group">
+                <span class="channel-yt-badge">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                  YouTube
+                </span>
+                <span class="channel-topic-badge">🤖 AI & Tech</span>
+              </div>
+            </div>
+            <div class="channel-content">
+              <div class="channel-title-row">
+                <h3>AIXplore Telugu</h3>
+                <span class="channel-verified" title="Official Verified Channel">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </span>
+              </div>
+              <p class="channel-handle">@aixploreteluguofficial</p>
+              <p class="channel-desc">
+                Dedicated to making Artificial Intelligence, machine learning tools, coding tutorials, and prompt engineering accessible in the Telugu language for regional students and tech aspirants.
+              </p>
+
+              <!-- Featured Latest Video -->
+              <a href="https://www.youtube.com/watch?v=wS3nFjKtrSc" target="_blank" rel="noopener noreferrer" class="channel-featured-video" title="Click to watch latest upload">
+                <div class="featured-video-thumb">
+                  <img src="images/youtube/aixplore-thumb-1.jpg" alt="AI Robots Future Technology Video Preview" />
+                  <div class="video-play-btn">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </div>
+                  <span class="video-badge-pill">HD</span>
+                </div>
+                <div class="featured-video-info">
+                  <span class="video-tag">Latest Upload</span>
+                  <h4 class="video-title">AI ప్రపంచాన్ని మార్చేస్తోంది! 🤖 Future Tech</h4>
+                  <span class="video-meta">AI Robots & Tech in Telugu • Watch on YouTube ↗</span>
+                </div>
+              </a>
+
+              <div class="channel-links">
+                <a href="https://youtube.com/@aixploreteluguofficial?si=aV_yyI-WDrSwnXCt" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-youtube">
+                  <span>Visit Channel</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Channel 2: Mana Paderu Trails -->
+          <div class="channel-card" data-card-link="https://youtube.com/@manapaderutrails?si=wpIvYofdx9Hm7ZQp" title="Open Mana Paderu Trails YouTube Channel">
+            <div class="channel-banner banner-trails">
+              <div class="channel-avatar-wrap">
+                <img src="images/youtube/mana-paderu-logo.jpg" alt="Mana Paderu Trails Channel Logo" class="channel-avatar-img" />
+              </div>
+              <div class="channel-badge-group">
+                <span class="channel-yt-badge">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                  YouTube
+                </span>
+                <span class="channel-topic-badge">🌿 Tourism & Nature</span>
+              </div>
+            </div>
+            <div class="channel-content">
+              <div class="channel-title-row">
+                <h3>Mana Paderu Trails</h3>
+                <span class="channel-verified" title="Official Verified Channel">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </span>
+              </div>
+              <p class="channel-handle">@manapaderutrails</p>
+              <p class="channel-desc">
+                Capturing the pristine valleys, waterfalls, trekking paths, coffee plantations, and vibrant tribal community culture of Paderu and the Eastern Ghats.
+              </p>
+
+              <!-- Featured Latest Video -->
+              <a href="https://www.youtube.com/watch?v=0Bmuoq5y43E" target="_blank" rel="noopener noreferrer" class="channel-featured-video" title="Click to watch featured journey">
+                <div class="featured-video-thumb">
+                  <img src="images/youtube/manapaderu-thumb-1.jpg" alt="12th Mailu to Paderu Road Journey Preview" />
+                  <div class="video-play-btn">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </div>
+                  <span class="video-badge-pill">4K</span>
+                </div>
+                <div class="featured-video-info">
+                  <span class="video-tag">Featured Trail</span>
+                  <h4 class="video-title">🌿 12th Mailu to Paderu Ghat Journey 🌄</h4>
+                  <span class="video-meta">Eastern Ghats Nature & Waterfalls • Watch ↗</span>
+                </div>
+              </a>
+
+              <div class="social-pills mb-3">
+                <a href="https://youtube.com/@manapaderutrails?si=wpIvYofdx9Hm7ZQp" target="_blank" rel="noopener noreferrer" class="pill-link pill-yt">▶ YouTube</a>
+                <a href="https://www.instagram.com/manapaderutrails?cnvx=MXM1OG45ZW9hNHp1bw==" target="_blank" rel="noopener noreferrer" class="pill-link pill-insta">📷 Instagram</a>
+                <a href="https://www.facebook.com/share/18ysDahEZA/" target="_blank" rel="noopener noreferrer" class="pill-link pill-fb">📘 Facebook</a>
+              </div>
+              <div class="channel-links mt-3">
+                <a href="https://youtube.com/@manapaderutrails?si=wpIvYofdx9Hm7ZQp" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-youtube">
+                  <span>Visit Channel</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+        <!-- Team Section -->
+    <section class="section team-section" id="team">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Collaboration</span>
+          <h2 class="section-title">My Collaborative Team</h2>
+          <p class="section-subtitle">Driving forward innovation together with fellow developers and cohort members.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <!-- Executive Leadership Tier: CEO, Project Lead & HR -->
+        <div class="team-leadership-grid">
+          <!-- Leadership 1: CEO, Dhinesh Sir -->
+          <div class="team-lead-card card-ceo">
+            <span class="lead-crown-badge badge-ceo">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+              </svg>
+              CEO
+            </span>
+            <div class="team-lead-avatar-wrap wrap-ceo">
+              <div class="lead-avatar-text avatar-ceo">DS</div>
+            </div>
+            <div class="team-lead-info">
+              <span class="team-lead-role" style="color: #f59e0b;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Executive Leadership
+              </span>
+              <h3>Dhinesh Sir</h3>
+              <p class="team-specialty" style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem;">Chief Executive Officer (CEO)</p>
+              <p class="team-lead-motto" style="color: var(--text-muted); font-size: 0.775rem;">Strategic direction, executive vision, and institutional leadership.</p>
+            </div>
+          </div>
+
+          <!-- Leadership 2: Project Lead, Madhukumar -->
+          <div class="team-lead-card">
+            <span class="lead-crown-badge">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+              </svg>
+              Project Lead
+            </span>
+            <div class="team-lead-avatar-wrap">
+              <img src="images/team/madhukumar-avatar.jpg" alt="Madhukumar - Project Lead" class="team-photo" />
+            </div>
+            <div class="team-lead-info">
+              <span class="team-lead-role">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                Project Leadership & Tech Architecture
+              </span>
+              <h3>Madhukumar</h3>
+              <div class="team-lead-contacts">
+                <a href="tel:+919391995165" class="lead-contact-item" title="Call Madhukumar">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>+91 93919 95165</span>
+                </a>
+                <a href="mailto:srinuvasamadhukumarmottadam@gmail.com" class="lead-contact-item" title="Email Madhukumar">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <span>Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/msv-madhu-kumar" target="_blank" rel="noopener noreferrer" class="lead-linkedin-pill" title="Connect on LinkedIn">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+              <p class="team-lead-motto">“Same Dreams... Bigger Impact... — Madhu” • Guiding AI innovation & systems.</p>
+            </div>
+          </div>
+
+          <!-- Leadership 3: HR, Somesh Sir -->
+          <div class="team-lead-card card-hr">
+            <span class="lead-crown-badge badge-hr">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+              </svg>
+              HR
+            </span>
+            <div class="team-lead-avatar-wrap wrap-hr">
+              <div class="lead-avatar-text avatar-hr">SS</div>
+            </div>
+            <div class="team-lead-info">
+              <span class="team-lead-role" style="color: #c084fc;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                People & Operations
+              </span>
+              <h3>Somesh Sir</h3>
+              <p class="team-specialty" style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem;">Head of Human Resources (HR)</p>
+              <p class="team-lead-motto" style="color: var(--text-muted); font-size: 0.775rem;">Cohort mentorship, talent development, and organizational culture.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-grid">
+          <!-- Member 1: Sankar Marri -->
+          <div class="team-card featured-member">
+            <div class="team-avatar-wrap">
+              <img src="images/sankar-github.jpg?v=3" alt="Sankar" class="team-photo" />
+            </div>
+            <div class="team-info">
+              <span class="team-role-tag">AI Fellow & Full-Stack Lead</span>
+              <h4>Sankar</h4>
+              <p class="team-phone"><a href="tel:+919390656724" class="phone-link">+91 9390656724</a></p>
+              <p class="team-specialty">Full-Stack Development, AI Workflows & Strategy</p>
+            </div>
+          </div>
+
+          <!-- Member 2: Kavala Srinu -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="images/team/kavala-srinu-avatar.jpg" alt="Kavala Srinu" class="team-photo" />
+            </div>
+            <div class="team-info">
+              <span class="team-role-tag">Forward Deployed Engineer</span>
+              <h4>Kavala Srinu</h4>
+              <p class="team-phone"><a href="tel:+918340955472" class="phone-link">+91 83409 55472</a></p>
+              <p class="team-specialty">Full-Stack Development, React & Field Implementation</p>
+            </div>
+          </div>
+
+          <!-- Member 3: Koravangi MudduKrishna -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="images/team/koravangi-muddukrishna-avatar.jpg" alt="Koravangi MudduKrishna" class="team-photo" />
+            </div>
+            <div class="team-info">
+              <span class="team-role-tag">Web Developer</span>
+              <h4>Koravangi MudduKrishna</h4>
+              <p class="team-phone"><a href="tel:+918688484033" class="phone-link">+91 86884 84033</a></p>
+              <p class="team-specialty">Web Development, React, Next.js & UI Architecture</p>
+            </div>
+          </div>
+
+          <!-- Member 4: Kankipati Hari Vishnu Vardhan -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="images/team/kankipati-hari-vishnu-vardhan-avatar.jpg" alt="Kankipati Hari Vishnu Vardhan" class="team-photo" />
+            </div>
+            <div class="team-info">
+              <span class="team-role-tag">UI/UX & Frontend Designer</span>
+              <h4>Kankipati Hari Vishnu Vardhan</h4>
+              <p class="team-phone"><a href="tel:+918317517918" class="phone-link">+91 83175 17918</a></p>
+              <p class="team-specialty">UI/UX Design, Visual Styling & Front-End UI</p>
+            </div>
+          </div>
+
+          <!-- Member 5: Pangi Aadhi Vasu -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="images/team/pangi-aadhi-vasu-avatar.jpg" alt="Pangi Aadhi Vasu" class="team-photo" />
+            </div>
+            <div class="team-info">
+              <span class="team-role-tag">QA & Deployment Engineer</span>
+              <h4>Pangi Aadhi Vasu</h4>
+              <p class="team-phone"><a href="tel:+919014847706" class="phone-link">+91 90148 47706</a></p>
+              <p class="team-specialty">QA Testing, Deployment Review & Performance Optimization</p>
+            </div>
+          </div>
+
+          <!-- Member 6: Vanthala Simhadhri -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="images/team/vanthala-simhadhri-avatar.jpg" alt="Vanthala Simhadhri" class="team-photo" />
+            </div>
+            <div class="team-info">
+              <span class="team-role-tag">Operations & Project Coordinator</span>
+              <h4>Vanthala Simhadhri</h4>
+              <p class="team-phone"><a href="tel:+919390644042" class="phone-link">+91 93906 44042</a></p>
+              <p class="team-specialty">Operations, Project Coordination & Field Execution</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+        <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">Contact & Communication</h2>
+          <p class="section-subtitle">Reach out for academic inquiries, project collaborations, or fellowship discussions.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-panel">
+            <h3>Let's Connect</h3>
+            <p>
+              Whether you are evaluating my portfolio for academic assessment, internship opportunities, or collaborative research, feel free to drop a message or reach out through my direct contacts.
+            </p>
+
+            <div class="contact-items">
+              <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div>
+                  <div class="contact-item-title">Primary Professional Email</div>
+                  <a href="mailto:marrisankar24@gmail.com" class="contact-link">marrisankar24@gmail.com</a>
+                  <button class="copy-btn" onclick="copyToClipboard('marrisankar24@gmail.com', this)" title="Copy Email">Copy</button>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">🏫</div>
+                <div>
+                  <div class="contact-item-title">Institutional / ITDA Email</div>
+                  <a href="mailto:itdasankarytc@gmail.com" class="contact-link">itdasankarytc@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <div>
+                  <div class="contact-item-title">Phone & WhatsApp</div>
+                  <a href="tel:+919390656724" class="contact-link">+91 9390656724</a>
+                  <button class="copy-btn" onclick="copyToClipboard('+919390656724', this)" title="Copy Phone">Copy</button>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <div class="contact-item-title">Location</div>
+                  <p class="contact-link">Pedabayalu, Paderu ITDA, ASR District, Andhra Pradesh, India</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links in Contact -->
+            <div class="contact-social-icons">
+              <a href="https://www.linkedin.com/in/sankar-marri-927698444" target="_blank" rel="noopener noreferrer" class="social-circle linkedin" title="LinkedIn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.77v8.37H6.46V10.9M7.84 6.7a1.61 1.61 0 1 0 1.61 1.61A1.61 1.61 0 0 0 7.84 6.7z"/>
+                </svg>
+              </a>
+              <a href="https://github.com/sankar-marri" target="_blank" rel="noopener noreferrer" class="social-circle github" title="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                </svg>
+              </a>
+              <a href="https://youtube.com/@aixploreteluguofficial?si=aV_yyI-WDrSwnXCt" target="_blank" rel="noopener noreferrer" class="social-circle youtube" title="YouTube">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/manapaderutrails?cnvx=MXM1OG45ZW9hNHp1bw==" target="_blank" rel="noopener noreferrer" class="social-circle instagram" title="Instagram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/share/18ysDahEZA/" target="_blank" rel="noopener noreferrer" class="social-circle facebook" title="Facebook">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Interactive Message Form -->
+          <div class="contact-form-panel">
+            <form id="contact-form" class="contact-form" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Professor / Visitor Name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email Address</label>
+                <input type="email" id="email" name="email" placeholder="name@domain.com" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Portfolio Evaluation / Project Inquiry" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100" id="submit-btn">
+                <span>Send Message via Email</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <a href="#home" class="footer-logo">
+          <span class="logo-accent">&lt;</span>Sankar<span class="logo-accent">/&gt;</span>
+        </a>
+        <p>Aarohan AI Fellow 2026 • Building impactful technology for tomorrow.</p>
+      </div>
+      <div class="footer-right">
+        <p>&copy; <span id="current-year">2026</span> Sankar. All rights reserved.</p>
+        <p class="footer-sub">Designed & Engineered with modern HTML5, CSS3 & JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

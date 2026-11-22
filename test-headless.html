@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body>
+<canvas id="c" width="640" height="360" style="background:#000;"></canvas>
+<script>
+window.addEventListener('load', async () => {
+  const canvas = document.getElementById('c');
+  const ctx = canvas.getContext('2d');
+  
+  // Audio
+  const AudioCtx = window.AudioContext || window.webkitAudioContext;
+  const actx = new AudioCtx();
+  const dest = actx.createMediaStreamDestination();
+  const osc = actx.createOscillator();
+  osc.frequency.value = 440;
+  osc.connect(dest);
+  osc.start();
+
+  const stream = new MediaStream([
+    ...canvas.captureStream(30).getVideoTracks(),
+    ...dest.stream.getAudioTracks()
+  ]);
+
+  let mime = 'video/webm;codecs=vp8';
+  if (!MediaRecorder.isTypeSupported(mime)) mime = 'video/webm';
+  const rec = new MediaRecorder(stream, { mimeType: mime });
+  const chunks = [];
+  rec.ondataavailable = e => { if (e.data.size > 0) chunks.push(e.data); };
+  rec.onstop = () => {
+    const blob = new Blob(chunks, { type: mime });
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      console.log('###BASE64_VIDEO_START###' + reader.result.split(',')[1] + '###BASE64_VIDEO_END###');
+    };
+    reader.readAsDataURL(blob);
+  };
+
+  rec.start();
+  let frame = 0;
+  const loop = () => {
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(0, 0, 640, 360);
+    ctx.fillStyle = '#38bdf8';
+    ctx.font = 'bold 30px sans-serif';
+    ctx.fillText('Testing Sankar Video ' + frame, 50, 180);
+    frame++;
+    if (frame < 60) {
+      requestAnimationFrame(loop);
+    } else {
+      rec.stop();
+      osc.stop();
+    }
+  };
+  loop();
+});
+</script>
+</body>
+</html>

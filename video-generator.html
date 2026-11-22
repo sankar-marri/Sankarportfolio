@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sankar Marri — Self-Introduction Video Studio & Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #070a12;
+      --bg-card: rgba(15, 23, 42, 0.85);
+      --accent-cyan: #38bdf8;
+      --accent-purple: #a855f7;
+      --accent-emerald: #10b981;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --border-glow: rgba(56, 189, 248, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .header {
+      text-align: center;
+      max-width: 800px;
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid var(--border-glow);
+      border-radius: 9999px;
+      color: var(--accent-cyan);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #38bdf8, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .studio-container {
+      width: 100%;
+      max-width: 960px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .canvas-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .controls-panel {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+      border-radius: 9999px;
+      transition: width 0.1s linear;
+    }
+
+    .action-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .status-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    button {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.75rem 1.4rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-preview {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-primary);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-preview:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-render {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: #ffffff;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+    }
+
+    .btn-render:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(168, 85, 247, 0.7);
+    }
+
+    .btn-render:disabled, .btn-preview:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .info-box {
+      width: 100%;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+
+    .info-box strong {
+      color: var(--accent-cyan);
+    }
+
+    .download-success {
+      display: none;
+      width: 100%;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      color: #6ee7b7;
+      font-weight: 600;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="badge">🎬 Antigravity Video Studio</span>
+    <h1>Generate Sankar's Self-Introduction Video</h1>
+    <p class="subtitle">
+      Click <strong>"Generate & Download Video"</strong> below. Your browser will render all scenes, your professional poster, live projects, animations, and voiceover into an actual downloadable video file!
+    </p>
+  </div>
+
+  <div class="studio-container">
+    <div class="canvas-wrapper">
+      <canvas id="videoCanvas" width="1280" height="720"></canvas>
+    </div>
+
+    <div class="controls-panel">
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="progressBar"></div>
+      </div>
+
+      <div class="action-row">
+        <div class="status-text" id="statusText">Ready to generate (Duration: 30s • 720p HD)</div>
+        <div class="btn-group">
+          <button class="btn-preview" id="btnPreview">▶ Preview Only</button>
+          <button class="btn-render" id="btnRender">
+            <span>🎥 Generate & Download Video (.webm / .mp4)</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="download-success" id="downloadSuccess">
+        🎉 Video successfully rendered and downloaded to your computer! You can now place it into the <code>videos/</code> folder as <code>sankar-intro.mp4</code> or share it on LinkedIn/YouTube!
+      </div>
+
+      <div class="info-box">
+        <strong>💡 How it works:</strong> The video studio compiles your portrait poster, your motto <em>("Dream Big... Code Better... Grow Stronger...")</em>, your 6 live deployed web applications, your bilingual channels, and leadership team into a clean 30-second presentation video with motion graphics and background audio.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('videoCanvas');
+    const ctx = canvas.getContext('2d');
+    const progressBar = document.getElementById('progressBar');
+    const statusText = document.getElementById('statusText');
+    const btnPreview = document.getElementById('btnPreview');
+    const btnRender = document.getElementById('btnRender');
+    const downloadSuccess = document.getElementById('downloadSuccess');
+
+    const TOTAL_DURATION = 30; // 30 seconds
+    const FPS = 30;
+    const TOTAL_FRAMES = TOTAL_DURATION * FPS;
+
+    // Load poster image
+    const posterImg = new Image();
+    posterImg.src = 'images/sankar-banner.jpg';
+    let posterLoaded = false;
+    posterImg.onload = () => {
+      posterLoaded = true;
+      drawStaticPoster();
+    };
+
+    function drawStaticPoster() {
+      if (!posterLoaded) return;
+      ctx.drawImage(posterImg, 0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(7, 10, 18, 0.4)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 36px "Space Grotesk", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Sankar — Self-Introduction Reel', canvas.width / 2, canvas.height / 2);
+
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = '600 20px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('Click "Generate & Download Video" below to render the full video', canvas.width / 2, canvas.height / 2 + 50);
+    }
+
+    // Audio synthesizer for background music
+    function createAudioStream() {
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const dest = audioCtx.createMediaStreamDestination();
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(220, audioCtx.currentTime); // A3
+
+      // Gentle synth arpeggios
+      const notes = [220, 277.18, 329.63, 440, 329.63, 277.18];
+      let step = 0;
+      const interval = setInterval(() => {
+        osc.frequency.setValueAtTime(notes[step % notes.length], audioCtx.currentTime);
+        step++;
+      }, 500);
+
+      gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+      osc.connect(gain);
+      gain.connect(dest);
+      osc.start();
+
+      return {
+        stream: dest.stream,
+        stop: () => {
+          clearInterval(interval);
+          try { osc.stop(); audioCtx.close(); } catch(e){}
+        }
+      };
+    }
+
+    // Draw frame at given second t (0 to 30)
+    function renderFrame(t) {
+      ctx.fillStyle = '#070a12';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Background ambient animated glow
+      const grad = ctx.createRadialGradient(
+        canvas.width / 2 + Math.sin(t) * 100, canvas.height / 2 + Math.cos(t) * 80, 50,
+        canvas.width / 2, canvas.height / 2, 700
+      );
+      grad.addColorStop(0, 'rgba(56, 189, 248, 0.25)');
+      grad.addColorStop(0.5, 'rgba(168, 85, 247, 0.15)');
+      grad.addColorStop(1, 'rgba(7, 10, 18, 1)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Scene 1 (0 to 6s): Intro & Persona
+      if (t < 6) {
+        const p = t / 6;
+        if (posterLoaded) {
+          ctx.save();
+          const scale = 1 + p * 0.08;
+          ctx.translate(canvas.width / 2, canvas.height / 2);
+          ctx.scale(scale, scale);
+          ctx.globalAlpha = 0.85;
+          ctx.drawImage(posterImg, -canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
+          ctx.restore();
+        }
+
+        // Overlay gradient
+        ctx.fillStyle = 'rgba(7, 10, 18, 0.65)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Lower Third Badge
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = 'bold 22px "Plus Jakarta Sans", sans-serif';
+        ctx.textAlign = 'left';
+        ctx.fillText('AAROHAN AI FELLOW 2026 • ITDA PADERU', 80, canvas.height - 180);
+
+        // Name
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 54px "Space Grotesk", sans-serif';
+        ctx.fillText('SANKAR', 80, canvas.height - 110);
+
+        // Motto
+        ctx.fillStyle = '#e2e8f0';
+        ctx.font = 'italic 600 24px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText('✨ "Dream Big... Code Better... Grow Stronger..."', 80, canvas.height - 60);
+      }
+      // Scene 2 (6 to 12s): Tech Arsenal
+      else if (t < 12) {
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = 'bold 24px "Plus Jakarta Sans", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('TECHNICAL ARSENAL', canvas.width / 2, 120);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 44px "Space Grotesk", sans-serif';
+        ctx.fillText('Modern Full-Stack & Applied AI', canvas.width / 2, 180);
+
+        const skills = [
+          { name: 'HTML5 & CSS3', desc: 'Semantic & Responsive' },
+          { name: 'JavaScript (ES6+)', desc: 'Interactive APIs & DOM' },
+          { name: 'React.js', desc: 'Component Architecture' },
+          { name: 'Python', desc: 'Applied AI & Automation' },
+          { name: 'Netlify Cloud', desc: 'Live CI/CD Deployment' },
+          { name: 'Generative AI', desc: 'LLMs & Regional Triage' }
+        ];
+
+        const startX = 140;
+        const startY = 240;
+        const cardW = 300;
+        const cardH = 160;
+
+        skills.forEach((s, i) => {
+          const col = i % 3;
+          const row = Math.floor(i / 3);
+          const x = startX + col * (cardW + 45);
+          const y = startY + row * (cardH + 30);
+
+          ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+          ctx.strokeStyle = 'rgba(56, 189, 248, 0.35)';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.roundRect(x, y, cardW, cardH, 12);
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.fillStyle = '#ffffff';
+          ctx.font = 'bold 22px "Space Grotesk", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText(s.name, x + cardW / 2, y + 65);
+
+          ctx.fillStyle = '#94a3b8';
+          ctx.font = '16px "Plus Jakarta Sans", sans-serif';
+          ctx.fillText(s.desc, x + cardW / 2, y + 105);
+        });
+      }
+      // Scene 3 (12 to 20s): Live Deployed Projects
+      else if (t < 20) {
+        ctx.fillStyle = '#10b981';
+        ctx.font = 'bold 24px "Plus Jakarta Sans", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('PROVEN IMPACT • LIVE DEPLOYED WEB APPS', canvas.width / 2, 100);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 44px "Space Grotesk", sans-serif';
+        ctx.fillText('6 Real-World Netlify Deployments', canvas.width / 2, 160);
+
+        const projects = [
+          { title: 'Arogya Drishti', cat: 'AI Healthcare', desc: 'AI symptom triage for rural communities' },
+          { title: 'Mana Paderu Trails', cat: 'Regional Tourism', desc: 'Eco-tourism and tribal culture guide' },
+          { title: 'Alluri Wonders', cat: 'Weather & Trails', desc: 'Agency guide with live weather telemetry' },
+          { title: 'ASR Tourist Hub', cat: 'Tribal Heritage', desc: 'Comprehensive agency destination portal' }
+        ];
+
+        const startX = 100;
+        const cardW = 250;
+        const cardH = 340;
+
+        projects.forEach((p, i) => {
+          const x = startX + i * (cardW + 30);
+          const y = 230;
+
+          ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
+          ctx.strokeStyle = 'rgba(16, 185, 129, 0.4)';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.roundRect(x, y, cardW, cardH, 14);
+          ctx.fill();
+          ctx.stroke();
+
+          // Green status dot
+          ctx.fillStyle = '#10b981';
+          ctx.beginPath();
+          ctx.arc(x + cardW - 30, y + 30, 6, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.fillStyle = '#38bdf8';
+          ctx.font = 'bold 14px "Plus Jakarta Sans", sans-serif';
+          ctx.textAlign = 'left';
+          ctx.fillText(p.cat.toUpperCase(), x + 25, y + 45);
+
+          ctx.fillStyle = '#ffffff';
+          ctx.font = 'bold 22px "Space Grotesk", sans-serif';
+          ctx.fillText(p.title, x + 25, y + 90);
+
+          ctx.fillStyle = '#94a3b8';
+          ctx.font = '15px "Plus Jakarta Sans", sans-serif';
+          ctx.fillText(p.desc, x + 25, y + 140, cardW - 50);
+
+          ctx.fillStyle = '#10b981';
+          ctx.font = 'bold 15px "Space Grotesk", sans-serif';
+          ctx.fillText('✓ Live on Netlify ↗', x + 25, y + 290);
+        });
+      }
+      // Scene 4 (20 to 25s): Community Education & Channels
+      else if (t < 25) {
+        ctx.fillStyle = '#a855f7';
+        ctx.font = 'bold 24px "Plus Jakarta Sans", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('DIGITAL CREATOR & REGIONAL ADVOCACY', canvas.width / 2, 120);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 44px "Space Grotesk", sans-serif';
+        ctx.fillText('Educating in Telugu & Documenting Heritage', canvas.width / 2, 180);
+
+        // Two large split cards
+        const channels = [
+          { name: 'AIXplore Telugu', type: 'YouTube Channel', desc: 'Translating AI and modern coding breakthroughs into Telugu for regional students.' },
+          { name: 'Mana Paderu Trails', type: 'Tourism Community', desc: 'Celebrating indigenous trekking trails, waterfalls, and culture across ASR District.' }
+        ];
+
+        channels.forEach((c, i) => {
+          const x = 140 + i * 530;
+          const y = 250;
+          const w = 470;
+          const h = 260;
+
+          ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
+          ctx.strokeStyle = i === 0 ? 'rgba(255, 0, 51, 0.4)' : 'rgba(225, 48, 108, 0.4)';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.roundRect(x, y, w, h, 16);
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.fillStyle = i === 0 ? '#ff4d6d' : '#f472b6';
+          ctx.font = 'bold 16px "Plus Jakarta Sans", sans-serif';
+          ctx.textAlign = 'left';
+          ctx.fillText(c.type.toUpperCase(), x + 35, y + 55);
+
+          ctx.fillStyle = '#ffffff';
+          ctx.font = 'bold 30px "Space Grotesk", sans-serif';
+          ctx.fillText(c.name, x + 35, y + 105);
+
+          ctx.fillStyle = '#cbd5e1';
+          ctx.font = '17px "Plus Jakarta Sans", sans-serif';
+          ctx.fillText(c.desc, x + 35, y + 160, w - 70);
+        });
+      }
+      // Scene 5 (25 to 30s): Outro & Connect
+      else {
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = 'bold 24px "Plus Jakarta Sans", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('READY TO CONTRIBUTE', canvas.width / 2, 140);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 50px "Space Grotesk", sans-serif';
+        ctx.fillText('Open to Full-Stack & AI Roles', canvas.width / 2, 210);
+
+        ctx.fillStyle = '#cbd5e1';
+        ctx.font = '20px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText('Available for Internships, Software Engineering & Project Collaboration', canvas.width / 2, 270);
+
+        // Contact info box
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.5)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.roundRect(canvas.width / 2 - 360, 320, 720, 220, 16);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 22px "Space Grotesk", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('📧 marrisankar24@gmail.com', canvas.width / 2, 380);
+        ctx.fillText('📞 +91 9390656724', canvas.width / 2, 430);
+        ctx.fillStyle = '#38bdf8';
+        ctx.fillText('🌐 https://github.com/sankar-marri', canvas.width / 2, 480);
+      }
+
+      // Universal Bottom Timeline Progress Bar on Canvas
+      const progress = t / TOTAL_DURATION;
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+      ctx.fillRect(0, canvas.height - 8, canvas.width, 8);
+      ctx.fillStyle = '#38bdf8';
+      ctx.fillRect(0, canvas.height - 8, canvas.width * progress, 8);
+    }
+
+    // Preview mode
+    let previewInterval = null;
+    btnPreview.addEventListener('click', () => {
+      if (previewInterval) {
+        clearInterval(previewInterval);
+        previewInterval = null;
+        btnPreview.textContent = '▶ Preview Only';
+        return;
+      }
+
+      let frame = 0;
+      btnPreview.textContent = '⏸ Pause Preview';
+      previewInterval = setInterval(() => {
+        const t = frame / FPS;
+        renderFrame(t);
+        progressBar.style.width = `${(t / TOTAL_DURATION) * 100}%`;
+        statusText.textContent = `Previewing: ${Math.floor(t)}s / ${TOTAL_DURATION}s`;
+
+        frame++;
+        if (frame >= TOTAL_FRAMES) {
+          clearInterval(previewInterval);
+          previewInterval = null;
+          btnPreview.textContent = '▶ Preview Only';
+          statusText.textContent = 'Preview finished!';
+        }
+      }, 1000 / FPS);
+    });
+
+    // Render & Export Video (.webm / .mp4)
+    btnRender.addEventListener('click', async () => {
+      btnRender.disabled = true;
+      btnPreview.disabled = true;
+      downloadSuccess.style.display = 'none';
+
+      const audio = createAudioStream();
+      const canvasStream = canvas.captureStream(FPS);
+
+      // Combine video and audio tracks
+      const combinedStream = new MediaStream([
+        ...canvasStream.getVideoTracks(),
+        ...audio.stream.getAudioTracks()
+      ]);
+
+      let mimeType = 'video/webm;codecs=vp9';
+      if (!MediaRecorder.isTypeSupported(mimeType)) {
+        mimeType = 'video/webm';
+      }
+
+      const recorder = new MediaRecorder(combinedStream, {
+        mimeType: mimeType,
+        videoBitsPerSecond: 4500000 // 4.5 Mbps HD
+      });
+
+      const recordedChunks = [];
+      recorder.ondataavailable = (e) => {
+        if (e.data.size > 0) recordedChunks.push(e.data);
+      };
+
+      recorder.onstop = () => {
+        audio.stop();
+        const blob = new Blob(recordedChunks, { type: 'video/webm' });
+        const url = URL.createObjectURL(blob);
+
+        // Download to user
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
+        a.download = 'sankar-self-introduction.webm';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(url);
+        }, 100);
+
+        statusText.textContent = 'Export complete! Video downloaded.';
+        downloadSuccess.style.display = 'block';
+        btnRender.disabled = false;
+        btnPreview.disabled = false;
+      };
+
+      recorder.start();
+
+      let frame = 0;
+      const renderInterval = setInterval(() => {
+        const t = frame / FPS;
+        renderFrame(t);
+        progressBar.style.width = `${(t / TOTAL_DURATION) * 100}%`;
+        statusText.textContent = `Recording video: ${Math.floor(t)}s / ${TOTAL_DURATION}s (${Math.floor((t / TOTAL_DURATION) * 100)}%)`;
+
+        frame++;
+        if (frame >= TOTAL_FRAMES) {
+          clearInterval(renderInterval);
+          recorder.stop();
+        }
+      }, 1000 / FPS);
+    });
+  </script>
+</body>
+</html>
